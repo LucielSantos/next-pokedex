@@ -1,22 +1,40 @@
-import Head from 'next/head';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-import NextLogo from '../assets/reactLogo.svg';
-import { Container } from '../styles/pages/Home';
+import { getAllPokemon } from '../services/pokeApi';
+import { Container, Card, Body, CardContainer } from '../styles/pages/Home';
+import { IPokemonResult } from '../types/pokemonList';
+import { Head, PokemonImg } from '../components';
 
-const Home: React.FC = () => {
+export const getStaticProps: GetStaticProps<{ pokemon: IPokemonResult[] }> = async () => {
+  const response = await getAllPokemon();
+
+  return {
+    props: {
+      pokemon: response,
+    },
+  };
+};
+
+function Home({ pokemon }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container>
-      <Head>
-        <title>Homepage</title>
-      </Head>
+      <Head title="Pokedex" />
 
-      <NextLogo height="10rem" width="10rem" />
+      <h1>Pokedex</h1>
 
-      <h1>React JS Structure</h1>
+      <Body>
+        {pokemon.map(curPoke => (
+          <CardContainer key={curPoke.name}>
+            <Card>
+              <PokemonImg url={curPoke.url} />
 
-      <p>A React JS + Next.js structure made by Luciel Santos</p>
+              <p>{curPoke.name}</p>
+            </Card>
+          </CardContainer>
+        ))}
+      </Body>
     </Container>
   );
-};
+}
 
 export default Home;
