@@ -6,9 +6,23 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  section {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+  }
+
   h1 {
     font-size: 54px;
-    margin: 4rem auto;
+    margin: 2rem 0 1rem 0;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 16px;
   }
 `;
 

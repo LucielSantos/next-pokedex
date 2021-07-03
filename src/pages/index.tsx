@@ -18,9 +18,17 @@ export const getStaticProps: GetStaticProps<{ pokemon: IPokemonResult[] }> = asy
 function Home({ pokemon }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container>
-      <Head title="Pokedex" />
+      <Head title="Pokedex Next.js" />
 
-      <h1>Pokedex</h1>
+      <section>
+        <h1>Pokedex</h1>
+
+        <h2>Exemple using Next.js</h2>
+
+        <p>
+          This example implements concepts of <b>Static Generation</b>.
+        </p>
+      </section>
 
       <Body>
         {pokemon.map(curPoke => (
