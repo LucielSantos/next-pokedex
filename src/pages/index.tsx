@@ -23,7 +23,7 @@ function Home({ pokemon }: InferGetStaticPropsType<typeof getStaticProps>) {
       <section>
         <h1>Pokedex</h1>
 
-        <h2>Exemple using Next.js</h2>
+        <h2>Exemple with Next.js</h2>
 
         <p>
           This example implements concepts of <b>Static Generation</b>.
