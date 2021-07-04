@@ -28,6 +28,14 @@ function Home({ pokemon }: InferGetStaticPropsType<typeof getStaticProps>) {
         <p>
           This example implements concepts of <b>Static Generation</b>.
         </p>
+
+        <h3>
+          Made by{' '}
+          <a href="https://github.com/LucielVitorBS" target="blank">
+            {' '}
+            Luciel Santos.
+          </a>
+        </h3>
       </section>
 
       <Body>

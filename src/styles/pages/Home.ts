@@ -23,6 +23,19 @@ export const Container = styled.div`
 
   p {
     font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    transition: filter 0.2s;
+
+    :visited {
+      color: inherit;
+    }
+
+    :hover {
+      filter: brightness(80%);
+    }
   }
 `;
 
